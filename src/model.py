@@ -1,4 +1,4 @@
-improt torch 
+import torch 
 from layer import GraphConvolution
 
 class GCN(torch.nn.Module):
