@@ -12,6 +12,8 @@ import argparse
 import torch_geometric
 from torch_geometric.utils import to_dense_adj
 
+from layer import GraphConvolution
+from model import GCN
 
 def train(model, data, num_epochs, use_edge_index=False):
     if not use_edge_index:
@@ -77,20 +79,19 @@ if __name__==__main__:
   parser = argparse.ArgumentParser()
   
   parser.add_argument('--use-edge-index', default=False)
-  parser.add_argument('--num_epochs', default=False)
-  parser.add_argument('--data')
+  parser.add_argument('--num-epochs', default=False)
+  #parser.add_argument('--data')
   
-  parser.add_argument('--nfeat')
-  parser.add_argument('--nhid')
-  parser.add_argument('--nclass')
+  parser.add_argument('--num-feat')
+  parser.add_argument('--num-hid')
+  parser.add_argument('--num-class')
   parser.add_argument('--dropout', default=0.5)
   
 
+  Cora = torch_geometric.datasets.Planetoid(root='/', name='Cora')
 
   args = parser.parse_args()
-  args.cuda = not args.no_cuda and torch.cuda.is_available()
 
+  model = GCN(nfeat = args.num_feat, nhid = args.num_hid, nclass = args.num_class, dropout = args.dropout)
+  train(model, data = Cora , num_epochs = args.num_epoch)
 
-  train(params)
-model, data, num_epochs, use_edge_index=False
-nfeat, nhid, nclass, dropout
