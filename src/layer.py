@@ -1,5 +1,5 @@
-improt torch
-improt math
+import torch
+import math
 
 class GraphConvolution(torch.nn.Module):
     """
