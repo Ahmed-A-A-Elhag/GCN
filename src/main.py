@@ -75,7 +75,7 @@ def train(model, data, num_epochs, use_edge_index=False):
 
     print(f'[Epoch {epoch+1}/{num_epochs}] Loss: {loss} | Val: {acc_val:.3f} | Test: {acc_test:.3f}')
     
-if __name__=='__main__':
+if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   
   parser.add_argument('--use-edge-index', type = bool ,default=False)
