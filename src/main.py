@@ -82,7 +82,6 @@ if __name__ == '__main__':
   parser.add_argument('--num-epochs', type = int, default=200)
   parser.add_argument('--data', type = str, default="Cora")
   
-  parser.add_argument('--num-feat', type = int)
   parser.add_argument('--num-hid', type = int)
   parser.add_argument('--num-class', type = int)
   parser.add_argument('--dropout',type = float, default=0.5)
@@ -97,7 +96,7 @@ if __name__ == '__main__':
   if(args.data == 'PubMed'):
         dataset = torch_geometric.datasets.Planetoid(root='/', name='PubMed')
         
-  model = GCN(nfeat = args.num_feat, nhid = args.num_hid, nclass = args.num_class, dropout = args.dropout)
+  model = GCN(nfeat = dataset[0].num_features, nhid = args.num_hid, nclass = args.num_class, dropout = args.dropout)
 
   train(model, data = dataset[0] , num_epochs = args.num_epochs)
 
