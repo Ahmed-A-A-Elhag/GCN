@@ -19,5 +19,5 @@ Paper Reference: https://arxiv.org/abs/1609.02907
 ### Train the model of Cora dataset
 
 ```git
-!python GCN/src/main.py  --num-epochs 200 --data 'Cora' --num-hid  16 --num-class 7 
+!python GCN/src/main.py  --num-epochs 200 --data 'Cora' --num-hid  16  
 ```
