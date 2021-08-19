@@ -90,11 +90,11 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
 
-  if(args.data = 'Cora'):
+  if(args.data == 'Cora'):
         dataset = torch_geometric.datasets.Planetoid(root='/', name='Cora')
-  if(args.data = 'CiteSeer'):
+  if(args.data == 'CiteSeer'):
         dataset = torch_geometric.datasets.Planetoid(root='/', name='CiteSeer')
-  if(args.data = 'PubMed'):
+  if(args.data == 'PubMed'):
         dataset = torch_geometric.datasets.Planetoid(root='/', name='PubMed')
         
   model = GCN(nfeat = args.num_feat, nhid = args.num_hid, nclass = args.num_class, dropout = args.dropout)
