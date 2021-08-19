@@ -15,6 +15,12 @@ from torch_geometric.utils import to_dense_adj
 from layer import GraphConvolution
 from model import GCN
 
+seed = 42
+np.random.seed(seed)
+torch.manual_seed(seed)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(seed)
+    
 def train(model, data, num_epochs, use_edge_index=False):
     if not use_edge_index:
 
