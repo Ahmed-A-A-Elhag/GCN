@@ -1,5 +1,5 @@
 improt torch 
-from src.layer import GraphConvolution
+from layer import GraphConvolution
 
 class GCN(torch.nn.Module):
     def __init__(self, nfeat, nhid, nclass, dropout):
