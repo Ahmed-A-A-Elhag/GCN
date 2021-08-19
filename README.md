@@ -2,7 +2,7 @@
 
 Paper Reference: https://arxiv.org/abs/1609.02907
 
-### Install the Requirement libraries
+### Install the requirement libraries
 
 ```git
 !pip install -q torch-scatter -f https://pytorch-geometric.com/whl/torch-1.9.0+cu102.html
