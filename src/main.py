@@ -20,7 +20,9 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 if torch.cuda.is_available():
     torch.cuda.manual_seed(seed)
-    
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 def train(model, data, num_epochs, use_edge_index=False):
     if not use_edge_index:
 
@@ -32,7 +34,8 @@ def train(model, data, num_epochs, use_edge_index=False):
         # Directly use edge_index, ignore this branch for now
         adj = data.edge_index
         
-    
+    model.to(device)
+    data.to(device)
 
     # Set up the optimizer
     
@@ -51,7 +54,7 @@ def train(model, data, num_epochs, use_edge_index=False):
         model.train()
 
         optimizer.zero_grad()
-        outs = model(data.x, adj)
+        outs = model(data.x.to(device), adj.to(device))
 
         # null_loss 
 
