@@ -1,6 +1,8 @@
 import torch
 import math
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 class GraphConvolution(torch.nn.Module):
     """
     GCN layer
@@ -34,7 +36,7 @@ class GraphConvolution(torch.nn.Module):
 
     def forward(self, fts, adj):
 
-        A_ = adj + torch.eye(adj.shape[0])
+        A_ = adj.to(deive) + torch.eye(adj.shape[0]).to(deivce)
         D_power_  = torch.diag(torch.pow(A_.sum(dim=-1),-0.5))
         support = torch.mm(A_, D_power_)
         support = torch.mm(D_power_, support)
