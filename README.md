@@ -21,3 +21,16 @@ Paper Reference: https://arxiv.org/abs/1609.02907
 ```git
 !python GCN/src/main.py  --num-epochs 200 --data 'Cora' --num-hid  16  
 ```
+
+### Results
+
+
+
+
+|    Dataset      |          Type  | Nodes          |Edges         | Classes     | Features   |Test Accuracy    |
+| ------------- | -------------    |------------- |------------- |------------- |------------- |-------------------- |
+| Cora     |       Citation Network        |     2,708      |   5,429      |     7       |    1,433      |       81.5 士 1         |    
+
+| Citeseer     |       Citation Network        |     3,327      |   4,732       |     6        |    3,703        |       68.9 士 0.5           |    
+
+| Pubmed    |       Citation Network      |      19,717      |   44,338       |     3       |500 |       91%       |     
