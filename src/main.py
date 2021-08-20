@@ -15,7 +15,7 @@ from torch_geometric.utils import to_dense_adj
 from layer import GraphConvolution
 from model import GCN
 
-seed = 42
+seed = 100
 np.random.seed(seed)
 torch.manual_seed(seed)
 if torch.cuda.is_available():
